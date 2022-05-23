@@ -29,17 +29,19 @@ const Home = () => {
     setContractTwo(contract2);
   };
 
+  const resetSearch = () => {
+    setShowSearcher(false);
+    setIsPairClicked(false);
+    setIsSearching(false);
+    setPairText("");
+  };
+
   return (
     <div className="flex flex-col">
       <div className="flex px-6 pt-8 pb-2 items-center space-x-2">
         <div className="">
           <span
-            onClick={() => {
-              setShowSearcher(false);
-              setIsPairClicked(false);
-              setIsSearching(false);
-              setPairText("");
-            }}
+            onClick={() => resetSearch()}
             className="text-4xl text-gray-100 select-none font-extrabold hover:text-[#F9B035] hover:cursor-pointer"
           >
             Mutual NFT
@@ -90,7 +92,7 @@ const Home = () => {
       )}
 
       <div className="w-full flex flex-col items-center justify-center my-4">
-        {isPairClicked ? null : (
+        {isPairClicked ? <div className="text-white underline select-none hover:text-[#F9B035] hover:cursor-pointer" onClick={() => resetSearch()}>(Click here to RESET)</div> : (
           <>
             <div
               className="text-gray-100 underline select-none hover:text-[#F9B035] hover:cursor-pointer"
