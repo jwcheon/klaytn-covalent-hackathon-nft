@@ -11,7 +11,7 @@ A simple whale counter is also implemented.
 
 [>> Mutual NFT Searcher by @jwcheon <<](https://mutual-nft-searcher.netlify.app/)
 
-
+- Click below for a Video Walk-through
 [![Video Walk-through](https://img.youtube.com/vi/2vvt5ertfkQ/0.jpg)](https://www.youtube.com/watch?v=2vvt5ertfkQ)
 
 
