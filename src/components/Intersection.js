@@ -28,7 +28,6 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
 
     const [whaleData, setWhaleData] = useState({});
 
-
     axiosRetry(axios, {
       retries: 3,
       retryDelay: (retryCount) => {
@@ -39,68 +38,6 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
         return error.response.status === 503;
       },
     });
-
-    useEffect(() => {
-      firstHandleData(firstChain, firstContract);
-    }, [firstChain, firstContract]);
-
-    useEffect(() => {
-      secondHandleData(secondChain, secondContract);
-    }, [secondChain, secondContract]);
-
-    // Compare two datasets for matching owners
-    useEffect(() => {
-        if (firstData !== null && secondData !== null) {
-            console.log("Intersection Started");
-
-            let tempIntersect = []; // array of matching owners' address
-            let tempCounterA = 0;
-            let tempCounterB = 0;
-
-            // 1 | 2-5 | 6-10 | 11-20 | 21-30 | 31-50 | 51-99 | 100+
-            function whaleChecker(set, item) {
-                if (item === 1) set['1'] += 1;
-                else if (item <= 5) set['2-5'] +=1;
-                else if (item <= 10) set['6-10'] +=1;
-                else if (item <= 20) set['11-20'] +=1;
-                else if (item <= 30) set['21-30'] +=1;
-                else if (item <= 50) set['31-50'] +=1;
-                else if (item <= 99) set['51-99'] +=1;
-                else if (item >= 100) set['100+'] +=1;
-
-                return set;
-            }
-            let tempWhaleDataA = {"1": 0, "2-5": 0, "6-10": 0, "11-20": 0, "21-30": 0, "31-50": 0, "51-99": 0, "100+": 0}
-            let tempWhaleDataB = {"1": 0, "2-5": 0, "6-10": 0, "11-20": 0, "21-30": 0, "31-50": 0, "51-99": 0, "100+": 0}
-
-            Object.keys(firstData).map(each => {
-                if (each in secondData) {
-                    tempIntersect.push(each);
-                    tempCounterA += parseInt(firstData[each]);
-                    tempCounterB += parseInt(secondData[each]);
-                }
-                tempWhaleDataA = whaleChecker(tempWhaleDataA, parseInt(firstData[each]));
-                return true;
-            });
-
-            Object.keys(secondData).map(each => {
-                tempWhaleDataB = whaleChecker(tempWhaleDataB, parseInt(firstData[each]));
-                return true;
-            });
-
-            setIntersectionData(tempIntersect);
-            setIntersectionCounter([tempCounterA, tempCounterB]);
-
-            console.log(JSON.stringify(tempWhaleDataA));
-            console.log(JSON.stringify(tempWhaleDataB));
-            setWhaleData([tempWhaleDataA, tempWhaleDataB]);
-
-            setIsSearching(false);
-            setPairText(firstDetail['contract_name'] + " vs " + secondDetail['contract_name']);
-
-            console.log("Intersection Complete: ", tempIntersect.length);
-        }
-    }, [firstData, secondData])
 
     const firstHandleData = async (id, contract) => {
       try {
@@ -162,6 +99,70 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
         console.log("Error when fetching token holders (2nd)", error);
       }
     };
+
+    useEffect(() => {
+      firstHandleData(firstChain, firstContract);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [firstChain, firstContract]);
+
+    useEffect(() => {
+      secondHandleData(secondChain, secondContract);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [firstChain, firstContract]);
+
+    // Compare two datasets for matching owners
+    useEffect(() => {
+        if (firstData !== null && secondData !== null) {
+            console.log("Intersection Started");
+
+            let tempIntersect = []; // array of matching owners' address
+            let tempCounterA = 0;
+            let tempCounterB = 0;
+
+            // 1 | 2-5 | 6-10 | 11-20 | 21-30 | 31-50 | 51-99 | 100+
+            function whaleChecker(set, item) {
+                if (item === 1) set['1'] += 1;
+                else if (item <= 5) set['2-5'] +=1;
+                else if (item <= 10) set['6-10'] +=1;
+                else if (item <= 20) set['11-20'] +=1;
+                else if (item <= 30) set['21-30'] +=1;
+                else if (item <= 50) set['31-50'] +=1;
+                else if (item <= 99) set['51-99'] +=1;
+                else if (item >= 100) set['100+'] +=1;
+
+                return set;
+            }
+            let tempWhaleDataA = {"1": 0, "2-5": 0, "6-10": 0, "11-20": 0, "21-30": 0, "31-50": 0, "51-99": 0, "100+": 0}
+            let tempWhaleDataB = {"1": 0, "2-5": 0, "6-10": 0, "11-20": 0, "21-30": 0, "31-50": 0, "51-99": 0, "100+": 0}
+
+            Object.keys(firstData).map(each => {
+                if (each in secondData) {
+                    tempIntersect.push(each);
+                    tempCounterA += parseInt(firstData[each]);
+                    tempCounterB += parseInt(secondData[each]);
+                }
+                tempWhaleDataA = whaleChecker(tempWhaleDataA, parseInt(firstData[each]));
+                return true;
+            });
+
+            Object.keys(secondData).map(each => {
+                tempWhaleDataB = whaleChecker(tempWhaleDataB, parseInt(firstData[each]));
+                return true;
+            });
+
+            setIntersectionData(tempIntersect);
+            setIntersectionCounter([tempCounterA, tempCounterB]);
+
+            console.log(JSON.stringify(tempWhaleDataA));
+            console.log(JSON.stringify(tempWhaleDataB));
+            setWhaleData([tempWhaleDataA, tempWhaleDataB]);
+
+            setIsSearching(false);
+            setPairText(firstDetail['contract_name'] + " vs " + secondDetail['contract_name']);
+
+            console.log("Intersection Complete: ", tempIntersect.length);
+        }
+    }, [firstData, secondData, firstDetail, secondDetail, setIsSearching, setPairText])
 
     return (
       <div className="text-gray-100 flex justify-center items-center">

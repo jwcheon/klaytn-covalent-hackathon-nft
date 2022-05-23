@@ -6,7 +6,7 @@ The purpose of this project is to easily compare any two NFT projects in detail.
 
 A simple whale counter is also implemented.
 
-### Special Feature : 'Mutuals'
+## Special Feature : 'Mutuals'
 
 `Collectors are always on the move. Check if they own both projects.`
 
@@ -14,10 +14,11 @@ One special feature here is the 'mutuals' statistics. This project helps users t
 
 - How many Sunmiya holders also have Metakongz?
 - How many BAYC holders also have MAYC?
+- ...Or anything else you wish to compare!
 
 ## Check it out in action!
 
-[Mutual NFT Dashboard by @jwcheon]("").
+[Mutual NFT Searcher by @jwcheon]("").
 
 
 ## Installation
