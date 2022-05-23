@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
@@ -24,7 +25,6 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
 
     const [intersectionData, setIntersectionData] = useState(null);
     const [intersectionCounter, setIntersectionCounter] = useState([0, 0]);
-    // const [intersectionWhale, setIntersectionWhale] = useState({});
 
     const [whaleData, setWhaleData] = useState({});
 
@@ -102,12 +102,10 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
 
     useEffect(() => {
       firstHandleData(firstChain, firstContract);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [firstChain, firstContract]);
 
     useEffect(() => {
       secondHandleData(secondChain, secondContract);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [firstChain, firstContract]);
 
     // Compare two datasets for matching owners
