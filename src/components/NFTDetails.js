@@ -65,6 +65,23 @@ const NFTDetails = (props) => {
                 <NFTDetailsTwin textOne={`${props.whaleData[0]['1']} (${Math.round(props.whaleData[0]['1'] / Object.keys(props.data[0]).length * 10000) / 100}%)`} textTwo={`${props.whaleData[1]['1']} (${Math.round(props.whaleData[1]['1'] / Object.keys(props.data[1]).length * 10000) / 100}%)`} sub={`Holder of 1 (Cur / Unique)`} />
 
                 <NFTDetailsTitle text={`Price History .`} isMarginTop={true} />
+                <NFTDetailsTwin
+                    textOne={props.marketData[0] !== null ? props.marketData[0][0]['floor_price_quote_7d'] : "N/A"}
+                    textTwo={props.marketData[1] !== null ? props.marketData[1][0]['floor_price_quote_7d'] : "N/A"}
+                    sub={`Floor Price 7days (USD)`} isFirst={true} emphasize={true} /> 
+                <NFTDetailsTwin
+                    textOne={props.marketData[0] !== null ? props.marketData[0][0]['unique_token_ids_sold_count_day'] : "N/A"}
+                    textTwo={props.marketData[1] !== null ? props.marketData[1][0]['unique_token_ids_sold_count_day'] : "N/A"}
+                    sub={`Unique Token IDs Sold Today`} emphasize={true} />  
+                <NFTDetailsTwin
+                    textOne={props.marketData[0] !== null ? props.marketData[0][0]['volume_quote_day'] : "N/A"}
+                    textTwo={props.marketData[1] !== null ? props.marketData[1][0]['volume_quote_day'] : "N/A"}
+                    sub={`Volume (Day)`} />  
+                <NFTDetailsTwin
+                    textOne={props.marketData[0] !== null ? props.marketData[0][0]['average_volume_quote_day'] : "N/A"}
+                    textTwo={props.marketData[1] !== null ? props.marketData[1][0]['average_volume_quote_day'] : "N/A"}
+                    sub={`Average Volume (Day)`} />  
+                {/* <NFTDetailsTwin textOne={props.marketData[0]} textTwo={props.marketData[1] ? props.marketData[1][0]['unique_token_ids_sold_count_day'] : "N/A"} sub={`Unique Token IDs Sold Today`} isFirst={true} />   */}
 
                 <NFTDetailsTitle text={`Plus Details .`} isMarginTop={true} />
                 <NFTDetailsTwin textOne={props.detail[0].contract_ticker_symbol} textTwo={props.detail[1].contract_ticker_symbol} sub={`Ticker Symbol`} isFirst={true} />

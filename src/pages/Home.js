@@ -40,12 +40,12 @@ const Home = () => {
               setIsSearching(false);
               setPairText("");
             }}
-            className="text-4xl text-gray-100 select-none hover:text-[#F9B035] hover:cursor-pointer"
+            className="text-4xl text-gray-100 select-none font-extrabold hover:text-[#F9B035] hover:cursor-pointer"
           >
-            NFT Dashboard
+            Mutual NFT
           </span>
           <h3 className="text-xl text-gray-400 select-none">
-            Explain explain this and that.
+            Klaytn-Covalent Hackathon.
           </h3>
         </div>
         <div>
@@ -64,9 +64,14 @@ const Home = () => {
           )}
         </h2>
         {isPairClicked ? null : (
-          <p className="text-lg w-3/5 text-gray-400 -mt-1">
-            Collectors are always on the move. Check if they own both projects.
-          </p>
+          <>
+            <p className="text-lg w-3/5 text-gray-400 -mt-1">
+              Collectors are always on the move. Check if they own both projects.
+            </p>
+            <p className="text-lg w-3/5 text-gray-400 -mt-4">
+              잘 나가는 NFT 프로젝트의 홀더들이, 또 무엇을 많이 보유하고 있을까?
+            </p>
+          </>
         )}
       </div>
 
@@ -79,7 +84,7 @@ const Home = () => {
           contract={[contractOne, contractTwo]}
         />
       ) : showSearcher ? (
-        <PairSelector />
+        <PairSelector onPairClick={onPairClick} />
       ) : (
         <MainDummy onPairClick={onPairClick} />
       )}

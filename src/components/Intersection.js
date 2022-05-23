@@ -24,7 +24,7 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
 
     const [intersectionData, setIntersectionData] = useState(null);
     const [intersectionCounter, setIntersectionCounter] = useState([0, 0]);
-    const [intersectionWhale, setIntersectionWhale] = useState({});
+    // const [intersectionWhale, setIntersectionWhale] = useState({});
 
     const [whaleData, setWhaleData] = useState({});
 
@@ -121,11 +121,12 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
                 `https://api.covalenthq.com/v1/${id}/nft_market/collection/${contract}/?key=${API_KEY}`
             );
             setFirstMarket(resp2.data.data.items);
-            console.log('Market data (1st)', JSON.stringify(resp2.data.data.items[0]['collection_name']));
         } catch (error) {
             setFirstMarket(null);
             console.log("Error when fetching market data (1st)", error);
         }
+
+        console.log('Market data (1st)', JSON.stringify(firstMarket));
       } catch (error) {
         setFirstMarket(null);
         console.log("Error when fetching token holders (1st)", error);
@@ -151,11 +152,12 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
                 `https://api.covalenthq.com/v1/${id}/nft_market/collection/${contract}/?key=${API_KEY}`
             );
             setSecondMarket(resp2.data.data.items);
-            console.log('Market data (2nd)', JSON.stringify(resp2.data.data.items[0]['collection_name']));
         } catch (error) {
             setSecondMarket(null);
             console.log("Error when fetching market data (2nd)", error);
         }
+
+        console.log('Market data (2nd)', JSON.stringify(secondMarket));
       } catch (error) {
         console.log("Error when fetching token holders (2nd)", error);
       }
