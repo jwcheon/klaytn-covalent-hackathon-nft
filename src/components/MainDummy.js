@@ -1,6 +1,6 @@
 import { mainDummySet, mainDummySetPairs } from "../resources/main-dummy-set";
 
-const MainDummy = () => {
+const MainDummy = ({ onPairClick }) => {
   return (
     <div className="min-w-full flex justify-center">
       <div className="flex flex-wrap w-5/6 justify-center items-center text-gray-200 gap-x-4 gap-y-4">
@@ -31,7 +31,8 @@ const MainDummy = () => {
               }(${mainDummySet[each[0]]["chain"]}) | ${
                 mainDummySet[each[1]]["title"]
               }(${mainDummySet[each[1]]["chain"]})`}</div>
-              <div className="w-3/5 bg-[#6F4FF2] rounded-xl mt-1 px-2 py-1 text-sm text-center font-medium select-none hover:opacity-70 hover:cursor-pointer">
+              <div onClick={() => onPairClick(mainDummySet[each[0]]["chainNum"], mainDummySet[each[0]]["contract"], mainDummySet[each[1]]["chainNum"], mainDummySet[each[1]]["contract"])}
+                className="w-3/5 bg-[#6F4FF2] rounded-xl mt-2 px-2 py-1 text-sm text-center font-medium select-none hover:opacity-70 hover:cursor-pointer">
                 Mutuals?
               </div>
             </div>

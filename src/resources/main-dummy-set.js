@@ -25,10 +25,11 @@ const mainDummySet = [
     {title: "Sunmiya", chain: "KLAY", chainNum: 8217, img: 'sunmiya.gif', contract: "0x8f5aa6b6dcd2d952a22920e8fe3f798471d05901" },
     {title: "HappierTown", chain: "KLAY", chainNum: 8217, img: 'happiertown.gif', contract: "0x4e24762be544f0af9235ffad146f39bbe0ec7800" },
     {title: "CryptoUnicorns", chain: "MATIC", chainNum: 137, img: 'cryptounicorns.png', contract: "0xdc0479cc5bba033b3e7de9f178607150b3abce1f" },
+    {title: "MetaKongz", chain: "KLAY", chainNum: 8217, img: 'metakongz.png', contract: "0x5a293a1e234f4c26251fa0c69f33c83c38c091ff" },
 ];
 
 const mainDummySetPairs = [
-    [5,6], [0,3], [1,2], [1,3], [2,8], [4,7]
+    [5,6], [0,3], [1,2], [7,4], [1,8], [6,9]
 ]
 
 export { mainDummySet, mainDummySetPairs };
