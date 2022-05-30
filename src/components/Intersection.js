@@ -144,7 +144,7 @@ const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, co
             });
 
             Object.keys(secondData).map(each => {
-                tempWhaleDataB = whaleChecker(tempWhaleDataB, parseInt(firstData[each]));
+                tempWhaleDataB = whaleChecker(tempWhaleDataB, parseInt(secondData[each]));
                 return true;
             });
 
