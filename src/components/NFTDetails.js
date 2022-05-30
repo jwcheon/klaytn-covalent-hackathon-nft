@@ -63,6 +63,25 @@ const NFTDetails = (props) => {
                 <NFTDetailsTwin textOne={`${props.whaleData[0]['6-10']} (${Math.round(props.whaleData[0]['6-10'] / Object.keys(props.data[0]).length * 10000) / 100}%)`} textTwo={`${props.whaleData[1]['6-10']} (${Math.round(props.whaleData[1]['6-10'] / Object.keys(props.data[1]).length * 10000) / 100}%)`} sub={`Holder of 6-10 (Cur / Unique)`} />
                 <NFTDetailsTwin textOne={`${props.whaleData[0]['2-5']} (${Math.round(props.whaleData[0]['2-5'] / Object.keys(props.data[0]).length * 10000) / 100}%)`} textTwo={`${props.whaleData[1]['2-5']} (${Math.round(props.whaleData[1]['2-5'] / Object.keys(props.data[1]).length * 10000) / 100}%)`} sub={`Holder of 2-5 (Cur / Unique)`} />
                 <NFTDetailsTwin textOne={`${props.whaleData[0]['1']} (${Math.round(props.whaleData[0]['1'] / Object.keys(props.data[0]).length * 10000) / 100}%)`} textTwo={`${props.whaleData[1]['1']} (${Math.round(props.whaleData[1]['1'] / Object.keys(props.data[1]).length * 10000) / 100}%)`} sub={`Holder of 1 (Cur / Unique)`} />
+                <NFTDetailsTwin 
+                    textOne={
+                        props.whaleData[0]['100+']
+                        + props.whaleData[0]['51-99']
+                        + props.whaleData[0]['31-50']
+                        + props.whaleData[0]['21-30']
+                        + props.whaleData[0]['11-20']
+                        + props.whaleData[0]['6-10']
+                        + props.whaleData[0]['2-5']
+                        + props.whaleData[0]['1']} 
+                    textTwo={
+                        props.whaleData[1]['100+']
+                        + props.whaleData[1]['51-99']
+                        + props.whaleData[1]['31-50']
+                        + props.whaleData[1]['21-30']
+                        + props.whaleData[1]['11-20']
+                        + props.whaleData[1]['6-10']
+                        + props.whaleData[1]['2-5']
+                        + props.whaleData[1]['1']} sub={`Total Holders (SUM)`} />
 
                 <NFTDetailsTitle text={`Price History .`} isMarginTop={true} />
                 <NFTDetailsTwin
