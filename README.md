@@ -15,6 +15,11 @@ A simple whale counter is also implemented.
 [![Video Walk-through](https://img.youtube.com/vi/2vvt5ertfkQ/0.jpg)](https://www.youtube.com/watch?v=2vvt5ertfkQ)
 
 
+## 3rd Prize Winner of 'Klaytn-Covalent Unified Hackathon' ('22)
+
+<img width="764" alt="image" src="https://user-images.githubusercontent.com/16380369/170947471-7e36d8ab-3aa8-40f8-90a7-5f2a144b215d.png">
+
+
 ## Special Feature : 'Mutuals'
 
 `Collectors are always on the move. Check if they own both projects.`
@@ -62,7 +67,8 @@ One special feature here is the 'mutuals' statistics. This project helps users t
 - Always important to check how distributed the project is.
 - From holders of just 1 to 100+ / shown with 8 segments.
 
-<img width="1401" alt="image" src="https://user-images.githubusercontent.com/16380369/169907426-19849127-b2e7-440b-989f-641904abf3b2.png">
+<img width="1234" alt="image" src="https://user-images.githubusercontent.com/16380369/170947216-52381c06-0224-4ff7-9294-6831b6b05104.png">
+
 
 ### 4) Price History
 
