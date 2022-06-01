@@ -15,9 +15,11 @@ A simple whale counter is also implemented.
 [![Video Walk-through](https://img.youtube.com/vi/2vvt5ertfkQ/0.jpg)](https://www.youtube.com/watch?v=2vvt5ertfkQ)
 
 
-## 3rd Prize Winner of 'Klaytn-Covalent Unified Hackathon' ('22)
+## 'Klaytn-Covalent Unified Hackathon' Winner - 3rd Prize ('22)
 
-<img width="764" alt="image" src="https://user-images.githubusercontent.com/16380369/170947471-7e36d8ab-3aa8-40f8-90a7-5f2a144b215d.png">
+Check out the Showcase here: https://www.covalenthq.com/blog/klaytn-unified-hackathon-winners/
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/16380369/171320334-3c40cd4d-e19a-48c5-b15c-af3319680c9d.png">
 
 
 ## Special Feature : 'Mutuals'
