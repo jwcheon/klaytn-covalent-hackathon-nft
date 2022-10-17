@@ -7,7 +7,7 @@ import NFTDetails from "./NFTDetails";
 const Intersection = ({ setIsSearching, LoadingCharacter, setPairText, chain, contract }) => {
 
     /*** When using this template, PLEASE CHANGE below ***/
-    const API_KEY = "ckey_6bf60a7bf22d4a309dbe74f3c5c"; // Change to your own API_KEY
+    const API_KEY = "ckey_b0c69f3115f84a038ca26c0813e"; // Change to your own API_KEY
     const PAGE_SIZE = 100000; // Hard-coded to control response time during dev. Make this dynamic using Covalent API ('page-size' param) for your own use! 
 
     // Comparing project A vs B (between any chain, any project)
